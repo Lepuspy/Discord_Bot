@@ -63,7 +63,6 @@ class Ticker(Plugin):
     Prameter:
         message: discord.message
         args : list
-    Return: bool
     """
     @command(pattern="^all")
     async def all(self, message, args):
@@ -122,6 +121,11 @@ class Ticker(Plugin):
         
 
     async def send_data(self,channel):
+        """
+        Action:
+            usd_jpyレート取得
+            出来高の多い順にソートし送信    
+        """
         self.usd_jpy()
         header = ["Name","Last","BestAsk","Diff","BestBid","Volume"]
         mes = "```python\n"
