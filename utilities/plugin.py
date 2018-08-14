@@ -12,6 +12,9 @@ class PluginMount(type):
         else:
             cls.plugins.append(cls)
 
+"""
+Plugin 作成継承クラス
+"""
 
 class Plugin(metaclass=PluginMount):
     def __init__(self, client):
